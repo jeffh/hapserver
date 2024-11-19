@@ -1,0 +1,11 @@
+bin
+.DS_Store
+tags
+result
+private.key
+*.out
+profile*
+.vscode
+*.sqlite*
+.homekit
+.lsp
