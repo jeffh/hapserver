@@ -55,7 +55,7 @@ func (s *DynamicServer) SetupUri() string {
 		s.Pin = fmt.Sprintf("%08d", rand.Intn(99999999))
 	}
 
-	return SetupURI(s.Bridge.Type, s.SetupId, s.Pin)
+	return setupURI(s.Bridge.Type, s.SetupId, s.Pin)
 }
 
 func (s *DynamicServer) Run(ctx context.Context) error {
@@ -150,7 +150,7 @@ func (s *DynamicServer) Run(ctx context.Context) error {
 	}
 }
 
-func SetupURI(accessoryType byte, setupId, pin string) string {
+func setupURI(accessoryType byte, setupId, pin string) string {
 	pinNum, err := strconv.ParseUint(pin, 10, 64)
 	if err != nil {
 		pinNum = 0
